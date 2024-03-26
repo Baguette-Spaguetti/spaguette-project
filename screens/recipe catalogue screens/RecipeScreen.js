@@ -1,13 +1,13 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import styles from '../styles/Styles'
+import styles from '../../styles/Styles'
 
-const StoreScreen = () => {
+const RecipeScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>StoreScreen</Text>
+      <Text>RecipeScreen</Text>
     </View>
   )
 }
 
-export default StoreScreen
+export default RecipeScreen

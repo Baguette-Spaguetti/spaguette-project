@@ -1,6 +1,6 @@
 import { View, Text, Pressable } from 'react-native'
 import React from 'react'
-import styles from '../styles/Styles'
+import styles from '../../styles/Styles'
 
 const PlanScreen = ({ navigation }) => {
   return (
