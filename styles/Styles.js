@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
       margin: 15,
     },
     listContainer: {
-      padding: 15,
+      padding: 10,
       backgroundColor: 'white',
       width: '100%',
       borderRadius: 10,
@@ -17,8 +17,18 @@ const styles = StyleSheet.create({
       borderRadius: 5,
       marginBottom: 10,
     },
+    listMidImage: {
+      height: 75,
+      width:'35%',
+      borderRadius: 5,
+      marginRight: 15,
+    },
     h2: {
       fontSize: 21,
+      fontWeight: 'bold',
+    },
+    h3: {
+      fontSize: 18,
       fontWeight: 'bold',
     },
   });

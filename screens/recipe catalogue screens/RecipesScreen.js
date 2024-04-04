@@ -33,7 +33,7 @@ const RecipeScreen = () => {
     <View style={styles.container}>
       <FlatList 
         data={recipes}
-        renderItem={({ item }) => <RecipeItem name={item.name}/>}
+        renderItem={({ item }) => <RecipeItem name={item.name} cover={item.cover}/>}
       />
     </View>
   )
