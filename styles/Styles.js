@@ -23,6 +23,10 @@ const styles = StyleSheet.create({
       borderRadius: 5,
       marginRight: 15,
     },
+    h1: {
+      fontSize: 26,
+      fontWeight: 'bold',
+    },
     h2: {
       fontSize: 21,
       fontWeight: 'bold',

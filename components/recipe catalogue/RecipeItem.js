@@ -1,15 +1,15 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, Pressable } from 'react-native'
 import React from 'react'
 import styles from '../../styles/Styles'
 
-const RecipeItem = ( { name, cover } ) => {
+const RecipeItem = ( { name, cover, navigation } ) => {
   return (
-    <View style={styles.listContainer}>
+    <Pressable style={styles.listContainer} onPress={() => navigation.navigate("Details", { recName: name })}>
         <View style={{flexDirection: 'row'}}>
             <Image style={styles.listMidImage} source={{uri: cover}}/>
             <Text style={styles.h3}>{name}</Text>
         </View>
-    </View>
+    </Pressable>
   )
 }
 

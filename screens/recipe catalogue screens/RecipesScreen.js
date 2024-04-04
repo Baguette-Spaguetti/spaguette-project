@@ -4,7 +4,7 @@ import styles from '../../styles/Styles'
 import { FlatList } from 'react-native-gesture-handler'
 import RecipeItem from '../../components/recipe catalogue/RecipeItem'
 
-const RecipeScreen = () => {
+const RecipeScreen = ({ navigation }) => {
 
   const [recipes, setRecipes] = useState([
     {
@@ -33,7 +33,7 @@ const RecipeScreen = () => {
     <View style={styles.container}>
       <FlatList 
         data={recipes}
-        renderItem={({ item }) => <RecipeItem name={item.name} cover={item.cover}/>}
+        renderItem={({ item }) => <RecipeItem name={item.name} cover={item.cover} navigation={navigation}/>}
       />
     </View>
   )
