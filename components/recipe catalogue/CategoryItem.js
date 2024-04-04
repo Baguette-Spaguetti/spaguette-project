@@ -1,13 +1,13 @@
-import { View, Text, Image } from 'react-native'
+import { Text, Image, Pressable } from 'react-native'
 import React from 'react'
 import styles from '../../styles/Styles'
 
-const CategoryItem = ({ name, cover }) => {
+const CategoryItem = ({ name, cover, navigation }) => {
   return (
-    <View style={styles.listContainer}>
+    <Pressable style={styles.listContainer} onPress={() => navigation.navigate("Recipes", { catName: name })}>
         <Image style={styles.listBigImage} source={{uri: cover}}/>
         <Text style={styles.h2}>{name}</Text>
-    </View>
+    </Pressable>
   )
 }
 
