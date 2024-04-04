@@ -17,7 +17,7 @@ export default function App() {
         {/* Planning Screen */}
         <Stack.Screen name="List" component={ListScreen} />
 
-        {/* Recipes Catalogue */}
+        {/* Recipes Catalogue */} 
         <Stack.Screen name="Recipes" component={RecipesScreen} options={({ route }) => ({ title: route.params.catName })}/>
         <Stack.Screen name="Details" component={DetailScreen} options={({ route }) => ({ title: route.params.recName })}/>
       </Stack.Navigator>
