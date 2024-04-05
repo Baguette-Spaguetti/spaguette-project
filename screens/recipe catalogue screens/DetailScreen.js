@@ -1,7 +1,9 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
 import styles from '../../styles/Styles'
 import { ScrollView } from 'react-native-gesture-handler'
+
+import { Entypo } from '@expo/vector-icons';
 
 const DetailScreen = ({ route }) => {
 
@@ -9,20 +11,29 @@ const DetailScreen = ({ route }) => {
         id: 1,
         name: "Carbonara",
         cover: "https://www.giallozafferano.it/images/244-24489/Spaghetti-alla-Carbonara_360x300.jpg",
-        recipe: `Ingredients:
-
-- 350g spaghetti
-- 150g pancetta or guanciale, diced
-- 3 large eggs
-- 50g Pecorino Romano cheese, grated
-- 50g Parmesan cheese, grated
-- Freshly ground black pepper
-- Salt
-- Olive oil
-
-Instructions:
-
-1. Bring a large pot of salted water to a boil. Cook the spaghetti according to the package instructions until al dente. Reserve 1 cup of pasta cooking water, then drain the spaghetti.
+        ingredients: [
+          {
+            name: 'Spaghetti',
+            quality: 350,
+            UdM: 'g',
+          },
+          {
+            name: 'Guanciale',
+            quality: 150,
+            UdM: 'g',
+          },
+          {
+            name: 'Large eggs',
+            quality: 3,
+            UdM: '',
+          },
+          {
+            name: 'Pecorino',
+            quality: 50,
+            UdM: 'g',
+          },
+        ],
+        recipe: `1. Bring a large pot of salted water to a boil. Cook the spaghetti according to the package instructions until al dente. Reserve 1 cup of pasta cooking water, then drain the spaghetti.
 
 2. While the spaghetti is cooking, heat a drizzle of olive oil in a large skillet over medium heat. Add the diced pancetta or guanciale and cook until crispy and golden brown.
 
@@ -42,10 +53,26 @@ Instructions:
         <Image style={{width: '100%', height: 200 }} source={{uri: details.cover}}/>
         <View style={styles.container}>
             <Text style={styles.h1}>{route.params.recName}</Text>
+            <View style={styles.bubbleContainer}>
+              <Text style={styles.h3}>Ingredients</Text>
+              {details.ingredients.map((ingredient) => {
+                return(
+                  <View style={{flexDirection: 'row', marginTop: 10, alignItems: 'center'}}>
+                    <Text style={{width: 50,}}>{ingredient.quality}{ingredient.UdM}</Text>
+                    <Text style={{marginLeft: 10,}}>{ingredient.name}</Text>
+                  </View>
+                )
+              })}
+            </View>
+            <Text style={styles.h3}>Instructions</Text>
             <Text>{details.recipe}</Text>
         </View>
     </ScrollView>
   )
 }
+
+const st = StyleSheet.create({
+  
+})
 
 export default DetailScreen

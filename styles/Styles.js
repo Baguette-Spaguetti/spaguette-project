@@ -23,17 +23,26 @@ const styles = StyleSheet.create({
       borderRadius: 5,
       marginRight: 15,
     },
+    bubbleContainer: {
+      backgroundColor: '#DDDDDD',
+      padding: 15,
+      borderRadius: 10,
+      marginVertical: 15,
+    },
     h1: {
       fontSize: 26,
       fontWeight: 'bold',
+      marginBottom: 5,
     },
     h2: {
       fontSize: 21,
       fontWeight: 'bold',
+      marginBottom: 5,
     },
     h3: {
       fontSize: 18,
       fontWeight: 'bold',
+      marginBottom: 5,
     },
   });
 
