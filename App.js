@@ -18,7 +18,7 @@ export default function App() {
         <Stack.Screen name="List" component={ListScreen} />
 
         {/* Recipes Catalogue */} 
-        <Stack.Screen name="Recipes" component={RecipesScreen} options={({ route }) => ({ title: route.params.catName })}/>
+        <Stack.Screen name="Recipes" component={RecipesScreen} options={({ route }) => ({ title: route.params.catName, headerBackTitle: 'Categories',  })}/>
         <Stack.Screen name="Details" component={DetailScreen} options={({ route }) => ({ title: route.params.recName })}/>
       </Stack.Navigator>
     </NavigationContainer>

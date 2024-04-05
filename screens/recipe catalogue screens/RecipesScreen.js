@@ -61,8 +61,9 @@ const RecipeScreen = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
+      <Text>{route.path}</Text>
       <FlatList 
-        data={recipes.filter((recipe) => { return recipe.catId == catId})}
+        data={recipes.filter((recipe) => recipe.catId == catId)}
         renderItem={({ item }) => <RecipeItem id={item.id} name={item.name} cover={item.cover} navigation={navigation}/>}
       />
     </View>
