@@ -172,7 +172,7 @@ const DetailScreen = ({ route }) => {
               <Text style={styles.h3}>Ingredients</Text>
               {recipe.ingredients.map((ingredient) => {
                 return(
-                  <View style={{flexDirection: 'row', marginTop: 10, alignItems: 'center'}}>
+                  <View key={ingredient.name} style={{flexDirection: 'row', marginTop: 10, alignItems: 'center'}}>
                     <Text style={{width: 50,}}>{ingredient.quality}{ingredient.UdM}</Text>
                     <Text style={{marginLeft: 10,}}>{ingredient.name}</Text>
                   </View>
