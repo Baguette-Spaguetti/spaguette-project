@@ -7,10 +7,14 @@ import { Entypo } from '@expo/vector-icons';
 
 const DetailScreen = ({ route }) => {
 
-    const [details, setDetails] = useState({
+    const { recId } = route.params
+
+    const [recipes, setRecipes] = useState([
+      {
         id: 1,
         name: "Carbonara",
         cover: "https://www.giallozafferano.it/images/244-24489/Spaghetti-alla-Carbonara_360x300.jpg",
+        catId: 1,
         ingredients: [
           {
             name: 'Spaghetti',
@@ -46,16 +50,127 @@ const DetailScreen = ({ route }) => {
 6. Season the Carbonara with freshly ground black pepper to taste.
 
 7. Serve immediately, garnished with additional grated Parmesan cheese and black pepper if desired.`
-    })
+    },
+    {
+      id: 2,
+      name: "Gricia",
+      cover: "https://www.giallozafferano.it/images/245-24521/Pasta-alla-gricia_360x300.jpg",
+      catId: 1,
+      ingredients: [
+        {
+          name: 'Maccheroni',
+          quality: 350,
+          UdM: 'g',
+        },
+        {
+          name: 'Guanciale',
+          quality: 150,
+          UdM: 'g',
+        },
+        {
+          name: 'Pecorino',
+          quality: 50,
+          UdM: 'g',
+        },
+      ],
+      recipe: `Recipe of gricia`
+  },
+    {
+      id: 3,
+      name: "Risotto alla zucca",
+      cover: "https://www.giallozafferano.it/images/0-44/Risotto-alla-zucca_360x300.jpg",
+      catId: 1,
+      ingredients: [
+        {
+          name: 'Risotto',
+          quality: 320,
+          UdM: 'g',
+        },
+      ],
+      recipe: `Recipe of risotto alla zucca`
+  },
+    {
+      id: 4,
+      name: "Cannelloni",
+      cover: "https://www.giallozafferano.it/images/239-23939/Cannelloni_360x300.jpg",
+      catId: 1,
+      ingredients: [
+        {
+          name: 'Besciamella',
+          quality: 350,
+          UdM: 'g',
+        },
+      ],
+      recipe: `Recipe of cannelloni`
+  },
+    {
+      id: 5,
+      name: "Scaloppine ai funghi",
+      cover: "https://www.giallozafferano.it/images/166-16686/Scaloppine-ai-funghi_360x300.jpg",
+      catId: 2,
+      ingredients: [
+        {
+          name: 'Scaloppine',
+          quality: 120,
+          UdM: 'g',
+        },
+      ],
+      recipe: `Recipe of scaloppine ai funghi`
+  },
+    {
+      id: 6,
+      name: "Branzino al forno",
+      cover: "https://www.giallozafferano.it/images/222-22246/Branzino-al-forno_360x300.jpg",
+      catId: 3,
+      ingredients: [
+        {
+          name: 'Branzino',
+          quality: 80,
+          UdM: 'g',
+        },
+      ],
+      recipe: `Recipe of branzino al forno`
+  },
+    {
+      id: 7,
+      name: "Salmone croccante",
+      cover: "https://www.giallozafferano.it/images/206-20645/Salmone-croccante_360x300.jpg",
+      catId: 3,
+      ingredients: [
+        {
+          name: 'Salmone',
+          quality: 180,
+          UdM: 'g',
+        },
+      ],
+      recipe: `Recipe of salmone croccante`
+  },
+    {
+      id: 8,
+      name: "Insalata di gamberi",
+      cover: "https://www.giallozafferano.it/images/190-19037/Insalata-di-gamberi_360x300.jpg",
+      catId: 4,
+      ingredients: [
+        {
+          name: 'Insalata',
+          quality: 50,
+          UdM: 'g',
+        },
+      ],
+      recipe: `Recipe of Insalata di gamberi`
+  },
+  ])
+
+  const recipe = recipes.filter((recipe) => recipe.id == recId)[0]
 
   return (
     <ScrollView>
-        <Image style={{width: '100%', height: 200 }} source={{uri: details.cover}}/>
+        <Image style={{width: '100%', height: 200 }} source={{uri: recipe.cover}}/>
         <View style={styles.container}>
             <Text style={styles.h1}>{route.params.recName}</Text>
             <View style={styles.bubbleContainer}>
               <Text style={styles.h3}>Ingredients</Text>
-              {details.ingredients.map((ingredient) => {
+              {recipe.ingredients.map((ingredient) => {
                 return(
                   <View style={{flexDirection: 'row', marginTop: 10, alignItems: 'center'}}>
                     <Text style={{width: 50,}}>{ingredient.quality}{ingredient.UdM}</Text>
@@ -65,7 +180,7 @@ const DetailScreen = ({ route }) => {
               })}
             </View>
             <Text style={styles.h3}>Instructions</Text>
-            <Text>{details.recipe}</Text>
+            <Text>{recipe.recipe}</Text>
         </View>
     </ScrollView>
   )
