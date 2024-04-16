@@ -3,7 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ListScreen from './screens/planning screens/ListScreen';
 import HomeScreen from './screens/HomeScreen';
-import RecipeScreen from './screens/recipe catalogue screens/RecipeScreen';
+import RecipesScreen from './screens/recipe catalogue screens/RecipesScreen';
+import DetailScreen from './screens/recipe catalogue screens/DetailScreen';
 
 const Stack = createStackNavigator();
 
@@ -16,8 +17,9 @@ export default function App() {
         {/* Planning Screen */}
         <Stack.Screen name="List" component={ListScreen} />
 
-        {/* Recipes Catalogue */}
-        <Stack.Screen name="Recipe" component={RecipeScreen} />
+        {/* Recipes Catalogue */} 
+        <Stack.Screen name="Recipes" component={RecipesScreen} options={({ route }) => ({ title: route.params.catName, headerBackTitle: 'Categories',  })}/>
+        <Stack.Screen name="Details" component={DetailScreen} options={({ route }) => ({ title: route.params.recName })}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
