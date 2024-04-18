@@ -6,7 +6,8 @@ class Ingredient extends Realm.Object {
         primaryKey: 'id',
         properties: {
             id: 'int',
-            name: 'string'
+            name: 'string',
+            uom: 'string'
         },
     };
 }
