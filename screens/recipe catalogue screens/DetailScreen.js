@@ -12,10 +12,7 @@ const DetailScreen = ({ route }) => {
 
   const recipe = realm.objects('Recipe').filtered('id == $0', recId)[0];
 
-  console.log('Prova: ' + recId)
-  console.log('Prova: ' + recipe.ingredientsQty)
-
-  return (
+  return(
     <ScrollView>
         <Image style={{width: '100%', height: 200 }} source={{uri: recipe.cover}}/>
         <View style={styles.container}>
