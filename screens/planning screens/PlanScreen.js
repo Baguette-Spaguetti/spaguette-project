@@ -3,6 +3,7 @@ import React from 'react'
 import styles from '../../styles/Styles'
 
 const PlanScreen = ({ navigation }) => {
+
   return (
     <View style={styles.container}>
       <Text>PlanScreen</Text>

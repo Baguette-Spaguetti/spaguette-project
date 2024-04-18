@@ -1,16 +1,29 @@
-import { View, Text, Pressable } from 'react-native'
-import React from 'react'
+import { View, Text } from 'react-native'
+import React, { useState } from 'react'
 import styles from '../../styles/Styles'
+import { FlatList } from 'react-native-gesture-handler'
+import RecipeItem from '../../components/RecipeItem'
+import Recipe from '../../schemas/Recipe'
+import { useQuery } from '@realm/react'
 
-const RecipesScreen = ({ navigation }) => {
+const RecipesScreen = ({ route, navigation }) => {
+
+  const { catId } = route.params
+
+  const recipes = useQuery(Recipe, recipes => {
+        return recipes.filtered('catId == $0', catId);
+    }
+  );
+
   return (
     <View style={styles.container}>
-      <Text>RecipesScreen</Text>
-      <Pressable onPress={() => navigation.navigate("Recipe")}>
-        <Text>Go to recipe</Text>
-      </Pressable>
+      <Text>{route.path}</Text>
+      <FlatList 
+        data={recipes.filter((recipe) => recipe.catId == catId)}
+        renderItem={({ item }) => <RecipeItem id={item.id} name={item.name} cover={item.cover} navigation={navigation}/>}
+      />
     </View>
   )
 }
 
-export default RecipesScreen
+export default RecipesScreen;
