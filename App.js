@@ -29,6 +29,8 @@ function AppContent() {
   }, []);
 
   const initializeApp = () => {
+
+    console.log('Adding default data...')
     
     realm.write(()=>{
       realm.deleteAll();

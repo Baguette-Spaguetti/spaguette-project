@@ -44,6 +44,36 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       marginBottom: 5,
     },
+    header: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingHorizontal: 16,
+      paddingVertical: 8,
+    },
+    searchBox: {
+      flex: 1,
+      height: 40,
+      borderColor: 'gray',
+      borderWidth: 1,
+      borderRadius: 4,
+      paddingHorizontal: 8,
+      marginRight: 16,
+    },
+    button: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 10,
+      borderRadius: 4,
+      elevation: 3,
+      backgroundColor: 'orange',
+      margin: 5,
+    },
+    text: {
+      fontSize: 12,
+      fontWeight: 'bold',
+      color: 'black',
+    },
   });
 
 export default styles
