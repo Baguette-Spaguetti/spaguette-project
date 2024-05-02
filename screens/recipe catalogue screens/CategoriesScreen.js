@@ -14,7 +14,7 @@ const CategoriesScreen = ({ navigation }) => {
     <View style={styles.container}>
       <FlatList
         data={categories}
-        renderItem={({ item }) => <CategoryItem id={item.id} name={item.name} cover={item.cover} navigation={navigation}/>}
+        renderItem={({ item }) => <CategoryItem id={item.id} name={item.name} cover={item.linkImage} navigation={navigation}/>}
       />
     </View>
   )

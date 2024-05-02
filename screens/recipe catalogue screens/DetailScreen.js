@@ -14,14 +14,13 @@ const DetailScreen = ({ route }) => {
 
   return(
     <ScrollView>
-        <Image style={{width: '100%', height: 200 }} source={{uri: recipe.cover}}/>
+        <Image style={{width: '100%', height: 200 }} source={{uri: recipe.linkImage}}/>
         <View style={styles.container}>
             <Text style={styles.h1}>{route.params.recName}</Text>
             <View style={styles.bubbleContainer}>
               <Text style={styles.h3}>Ingredients</Text>
               {recipe.ingredientsQty.map((ingqty) => {
                 const ingredient = ingqty.ingredient;
-                console.log(ingredient.name)
                 return(
                   <View key={ingredient.name} style={{flexDirection: 'row', marginTop: 10, alignItems: 'center'}}>
                     <Text style={{width: 50,}}>{ingqty.qty}{ingredient.uom}</Text>
