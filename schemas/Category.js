@@ -7,7 +7,8 @@ class Category extends Realm.Object {
         properties: {
             id: 'int',
             name: 'string',
-            cover: 'string'
+            linkImage: 'string?',
+            description: 'string?'
         },
     };
 }

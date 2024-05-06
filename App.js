@@ -29,7 +29,8 @@ function AppContent() {
   }, []);
 
   const initializeApp = () => {
-    console.log('Inizialize...');
+
+    console.log('Adding default data...')
     
     realm.write(()=>{
       realm.deleteAll();
@@ -40,25 +41,25 @@ function AppContent() {
       realm.create(Category, {
         id: 1,
         name: "Pasta",
-        cover: "https://www.giallozafferano.it/images/242-24236/Spaghetti-alle-vongole_360x300.jpg",
+        linkImage: "https://www.giallozafferano.it/images/242-24236/Spaghetti-alle-vongole_360x300.jpg",
       });
       
       realm.create(Category, {
         id: 2,
         name: "Meat",
-        cover: "https://www.giallozafferano.it/images/257-25714/Bistecca-alla-fiorentina_360x300.jpg",
+        linkImage: "https://www.giallozafferano.it/images/257-25714/Bistecca-alla-fiorentina_360x300.jpg",
       });
       
       realm.create(Category, {
         id: 3,
         name: "Fish",
-        cover: "https://www.giallozafferano.it/images/266-26693/Pesce-spada-in-padella_360x300.jpg",
+        linkImage: "https://www.giallozafferano.it/images/266-26693/Pesce-spada-in-padella_360x300.jpg",
       });
       
       realm.create(Category, {
         id: 4,
         name: "Salad",
-        cover: "https://www.giallozafferano.it/images/190-19037/Insalata-di-gamberi_360x300.jpg",
+        linkImage: "https://www.giallozafferano.it/images/190-19037/Insalata-di-gamberi_360x300.jpg",
       });
     });
 
@@ -127,7 +128,7 @@ function AppContent() {
         id: 1,
         catId: 1,
         name: 'Carbonara',
-        cover: 'https://www.giallozafferano.it/images/244-24489/Spaghetti-alla-Carbonara_360x300.jpg',
+        linkImage: 'https://www.giallozafferano.it/images/244-24489/Spaghetti-alla-Carbonara_360x300.jpg',
         ingredientsQty: [
           {ingredient: realm.objectForPrimaryKey('Ingredient', 1),
           qty: 350},
@@ -156,7 +157,7 @@ function AppContent() {
         id: 2,
         catId: 1,
         name: 'Gricia',
-        cover: 'https://www.giallozafferano.it/images/245-24521/Pasta-alla-gricia_360x300.jpg',
+        linkImage: 'https://www.giallozafferano.it/images/245-24521/Pasta-alla-gricia_360x300.jpg',
         ingredientsQty: [
           {ingredient: realm.objectForPrimaryKey('Ingredient', 5),
           qty: 350},
@@ -171,7 +172,7 @@ function AppContent() {
         id: 3,
         catId: 1,
         name: 'Risotto alla zucca',
-        cover: 'https://www.giallozafferano.it/images/0-44/Risotto-alla-zucca_360x300.jpg',
+        linkImage: 'https://www.giallozafferano.it/images/0-44/Risotto-alla-zucca_360x300.jpg',
         ingredientsQty: [
           {ingredient: realm.objectForPrimaryKey('Ingredient', 6),
           qty: 320}
@@ -182,7 +183,7 @@ function AppContent() {
         id: 4,
         catId: 1,
         name: 'Cannelloni',
-        cover: 'https://www.giallozafferano.it/images/239-23939/Cannelloni_360x300.jpg',
+        linkImage: 'https://www.giallozafferano.it/images/239-23939/Cannelloni_360x300.jpg',
         ingredientsQty: [
           {ingredient: realm.objectForPrimaryKey('Ingredient', 7),
           qty: 350}
@@ -193,7 +194,7 @@ function AppContent() {
         id: 5,
         catId: 2,
         name: 'Scaloppine ai funghi',
-        cover: 'https://www.giallozafferano.it/images/166-16686/Scaloppine-ai-funghi_360x300.jpg',
+        linkImage: 'https://www.giallozafferano.it/images/166-16686/Scaloppine-ai-funghi_360x300.jpg',
         ingredientsQty: [
           {ingredient: realm.objectForPrimaryKey('Ingredient', 8),
           qty: 120}
@@ -204,7 +205,7 @@ function AppContent() {
         id: 6,
         catId: 3,
         name: 'Branzino al forno',
-        cover: 'https://www.giallozafferano.it/images/222-22246/Branzino-al-forno_360x300.jpg',
+        linkImage: 'https://www.giallozafferano.it/images/222-22246/Branzino-al-forno_360x300.jpg',
         ingredientsQty: [
           {ingredient: realm.objectForPrimaryKey('Ingredient', 9),
           qty: 80}
@@ -215,7 +216,7 @@ function AppContent() {
         id: 7,
         catId: 3,
         name: 'Salmone croccante',
-        cover: 'https://www.giallozafferano.it/images/206-20645/Salmone-croccante_360x300.jpg',
+        linkImage: 'https://www.giallozafferano.it/images/206-20645/Salmone-croccante_360x300.jpg',
         ingredientsQty: [
           {ingredient: realm.objectForPrimaryKey('Ingredient', 10),
           qty: 180}
@@ -226,7 +227,7 @@ function AppContent() {
         id: 8,
         catId: 4,
         name: 'Insalata di gamberi',
-        cover: 'https://www.giallozafferano.it/images/190-19037/Insalata-di-gamberi_360x300.jpg',
+        linkImage: 'https://www.giallozafferano.it/images/190-19037/Insalata-di-gamberi_360x300.jpg',
         ingredientsQty: [
           {ingredient: realm.objectForPrimaryKey('Ingredient', 11),
           qty: 50}

@@ -8,9 +8,10 @@ class Recipe extends Realm.Object {
             id: 'int',
             catId: 'int',
             name: 'string',
-            cover: 'string',
             ingredientsQty: 'IngredientQty[]',
-            instructions: 'string'
+            instructions: 'string?',
+            linkSteps: 'string?',
+            linkImage: 'string?'
         },
     };
 }

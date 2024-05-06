@@ -20,7 +20,7 @@ const RecipesScreen = ({ route, navigation }) => {
       <Text>{route.path}</Text>
       <FlatList 
         data={recipes.filter((recipe) => recipe.catId == catId)}
-        renderItem={({ item }) => <RecipeItem id={item.id} name={item.name} cover={item.cover} navigation={navigation}/>}
+        renderItem={({ item }) => <RecipeItem id={item.id} name={item.name} cover={item.linkImage} navigation={navigation}/>}
       />
     </View>
   )
