@@ -24,14 +24,14 @@ const CategoriesScreen = ({ navigation }) => {
   };
 
   const handleAddCategory = () => {
-    // Add code to handle adding a category
+    navigation.navigate('Add Category');
   };
 
   const handleRemoveCategories = () => {
     setIsRemoveMode(!isRemoveMode);
   };
 
-  const handleRemoveCategory = (categoryId) => {
+  const handleRemoveCategory = (categoryName) => {
     Alert.alert(
       'Confirm Removal',
       'Are you sure you want to remove this category?',
@@ -43,7 +43,7 @@ const CategoriesScreen = ({ navigation }) => {
         {
           text: 'Delete',
           onPress: () => {
-            const toDelete = categories.filtered(`id == ${categoryId}`);
+            const toDelete = realm.objectForPrimaryKey('Category', categoryName)
             realm.write(() => {
               realm.delete(toDelete);
             });
@@ -57,11 +57,11 @@ const CategoriesScreen = ({ navigation }) => {
   const renderItem = ({ item }) => (
     <View>
       {isRemoveMode && (
-        <Pressable style={styles.removeButton} onPress={() => handleRemoveCategory(item.id)}>
+        <Pressable style={styles.removeButton} onPress={() => handleRemoveCategory(item.name)}>
           <AntDesign name="closecircle" size={24} color="red" />
         </Pressable>
       )}
-      <CategoryItem id={item.id} name={item.name} linkImage={item.linkImage} navigation={navigation} />
+      <CategoryItem name={item.name} linkImage={item.linkImage} navigation={navigation} />
     </View>
   );
 

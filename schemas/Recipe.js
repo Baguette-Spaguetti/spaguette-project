@@ -3,11 +3,10 @@ import Realm from 'realm'
 class Recipe extends Realm.Object {
     static schema = {
         name: 'Recipe',
-        primaryKey: 'id',
+        primaryKey: 'name',
         properties: {
-            id: 'int',
-            catId: 'int',
             name: 'string',
+            catId: 'string',
             ingredientsQty: 'IngredientQty[]',
             instructions: 'string?',
             linkSteps: 'string?',

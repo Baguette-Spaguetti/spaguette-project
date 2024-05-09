@@ -11,7 +11,7 @@ const RecipesScreen = ({ route, navigation }) => {
   const { catId } = route.params
 
   const recipes = useQuery(Recipe, recipes => {
-        return recipes.filtered('catId == $0', catId);
+        return recipes.filtered(`catId == "${catId}"`);
     }
   );
 
@@ -19,8 +19,8 @@ const RecipesScreen = ({ route, navigation }) => {
     <View style={styles.container}>
       <Text>{route.path}</Text>
       <FlatList 
-        data={recipes.filter((recipe) => recipe.catId == catId)}
-        renderItem={({ item }) => <RecipeItem id={item.id} name={item.name} cover={item.linkImage} navigation={navigation}/>}
+        data={recipes}
+        renderItem={({ item }) => <RecipeItem name={item.name} cover={item.linkImage} navigation={navigation}/>}
       />
     </View>
   )
