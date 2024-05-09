@@ -7,6 +7,7 @@ import HomeScreen from "./screens/HomeScreen";
 import RecipesScreen from "./screens/recipe catalogue screens/RecipesScreen";
 import DetailScreen from "./screens/recipe catalogue screens/DetailScreen";
 import AddCategoryScreen from "./screens/recipe catalogue screens/AddCategoryScreen";
+import AddRecipeScreen from "./screens/recipe catalogue screens/AddRecipeScreen";
 import { RealmProvider, useRealm } from "@realm/react";
 import Category from "./schemas/Category";
 import Recipe from "./schemas/Recipe";
@@ -288,6 +289,7 @@ function AppContent() {
         {/* Planning Screen */}
         <Stack.Screen name="List" component={ListScreen} />
         <Stack.Screen name="Add Category" component={AddCategoryScreen} />
+        <Stack.Screen name="Add Recipe" component={AddRecipeScreen} />
 
         {/* Recipes Catalogue */}
         <Stack.Screen

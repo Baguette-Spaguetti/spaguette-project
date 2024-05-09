@@ -8,8 +8,6 @@ import { useQuery } from '@realm/react'
 import { AntDesign } from '@expo/vector-icons';
 import { useRealm } from '@realm/react'
 
-
-
 const RecipesScreen = ({ route, navigation }) => {
 
   const realm = useRealm();
@@ -25,12 +23,11 @@ const RecipesScreen = ({ route, navigation }) => {
   const [isRemoveMode, setIsRemoveMode] = React.useState(false);
 
   const handleSearch = (text) => {
-    // update categories using words from text to search in categories items which have name attribute
     setSearchText(text)
   };
 
-  const handleAddCategory = () => {
-    navigation.navigate('Add Category');
+  const handleAddRecipe = () => {
+    navigation.navigate('Add Recipe', { catName: catId });
   };
 
   const handleRemoveCategories = () => {
@@ -80,7 +77,7 @@ const RecipesScreen = ({ route, navigation }) => {
           onChangeText={handleSearch}
           value={searchText}
         />
-        <Pressable style={styles.button} onPress={handleAddCategory}>
+        <Pressable style={styles.button} onPress={handleAddRecipe}>
           <Text style={styles.text}>Add</Text>
         </Pressable>
         <Pressable style={styles.button} onPress={handleRemoveCategories}>

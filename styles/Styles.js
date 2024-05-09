@@ -82,7 +82,32 @@ const styles = StyleSheet.create({
     addCategoryForm: {
       padding : 10,
       fontSize: 16
-    }
+    },
+    addRecipeForm: {
+      padding : 10,
+      fontSize: 16
+    },
+    selectedButton: {
+      backgroundColor: 'green',
+    },
+    selectedIngredient: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: 10,
+      marginVertical: 5,
+      backgroundColor: '#f8f8f8',
+      borderRadius: 5,
+    },
+    removeButton: {
+      backgroundColor: '#ff0000',
+      padding: 5,
+      borderRadius: 5,
+    },
+    removeButtonText: {
+      color: '#ffffff',
+      fontWeight: 'bold',
+    },
   });
 
 export default styles

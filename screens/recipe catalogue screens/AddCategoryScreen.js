@@ -5,7 +5,7 @@ import Category from '../../schemas/Category.js'
 import styles from '../../styles/Styles'
 import { useRealm } from '@realm/react';
 
-const AddCategoryScreen = () => {
+const AddCategoryScreen = ( { navigation } ) => {
   const [name, setName] = useState('');
   const [linkImage, setLinkImage] = useState('');
   const [description, setDescription] = useState('');
@@ -49,6 +49,7 @@ const AddCategoryScreen = () => {
         description: description,
       });
       console.log('New category added');
+      navigation.goBack();
     });
 
     setName('');
