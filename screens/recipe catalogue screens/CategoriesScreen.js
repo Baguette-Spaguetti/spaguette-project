@@ -1,4 +1,4 @@
-import { View, TextInput, Alert, Pressable, Text, Image} from 'react-native'
+import { View, TextInput, Alert, Pressable, Text } from 'react-native'
 import React from 'react'
 import styles from '../../styles/Styles'
 import { useQuery } from '@realm/react'
@@ -44,8 +44,10 @@ const CategoriesScreen = ({ navigation }) => {
           text: 'Delete',
           onPress: () => {
             const toDelete = realm.objectForPrimaryKey('Category', categoryName)
+            const recipesToDelete = realm.objects('Recipe').filtered(`catId == "${categoryName}"`)
             realm.write(() => {
               realm.delete(toDelete);
+              realm.delete(recipesToDelete);
             });
           },
         },
