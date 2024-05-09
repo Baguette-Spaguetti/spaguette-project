@@ -7,10 +7,10 @@ import { useRealm } from '@realm/react'
 
 const DetailScreen = ({ route }) => {
 
-  const { recId } = route.params
+  const { recName } = route.params
   const realm = useRealm()
 
-  const recipe = realm.objects('Recipe').filtered('id == $0', recId)[0];
+  const recipe = realm.objectForPrimaryKey('Recipe', recName)
 
   return(
     <ScrollView>

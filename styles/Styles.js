@@ -74,6 +74,15 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       color: 'black',
     },
+    textAddCategory: {
+      fontSize: 18,
+      fontWeight: 'bold',
+      color: 'black',
+    },
+    addCategoryForm: {
+      padding : 10,
+      fontSize: 16
+    }
   });
 
 export default styles
