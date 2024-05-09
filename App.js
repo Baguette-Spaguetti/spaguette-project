@@ -36,6 +36,12 @@ function AppContent() {
     if (settings.length === 0 || settings[0].firstLaunch) {
       console.log("Adding default data...");
 
+      {/* 
+      realm.write(() => {
+        realm.deleteAll();
+      })
+      */}
+
       realm.write(() => {
         if (settings.length === 0) {
           realm.create('Settings', {firstLaunch: false});
