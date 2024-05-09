@@ -24,7 +24,7 @@ const CategoriesScreen = ({ navigation }) => {
   };
 
   const handleAddCategory = () => {
-    navigation.navigate('Add Category');
+    navigation.navigate('Add Category', { navigation });
   };
 
   const handleRemoveCategories = () => {
