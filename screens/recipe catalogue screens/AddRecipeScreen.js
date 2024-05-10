@@ -91,7 +91,7 @@ const AddRecipeScreen = ( { route, navigation } ) => {
         <View key={index} style={styles.selectedIngredient}>
           <Text style={styles.addRecipeForm}>{item.ingredient.name} - {item.qty}{item.ingredient.uom}</Text>
           <Pressable 
-            style={styles.removeButton} 
+            style={styles.removeButtonIngredients} 
             onPress={() => {
               const newSelectedIngredients = [...selectedIngredients];
               newSelectedIngredients.splice(index, 1);
