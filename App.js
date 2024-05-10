@@ -290,6 +290,7 @@ function AppContent() {
         <Stack.Screen name="List" component={ListScreen} />
         <Stack.Screen name="Add Category" component={AddCategoryScreen} />
         <Stack.Screen name="Add Recipe" component={AddRecipeScreen} />
+        <Stack.Screen name="ListScreen" component={ListScreen} />
 
         {/* Recipes Catalogue */}
         <Stack.Screen
